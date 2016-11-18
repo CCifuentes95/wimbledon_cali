@@ -36,26 +36,20 @@
 	<div class="container">
 		<h:form>
 			<p:growl id="msg" />
-			<p:panel id="pnlTipoTorneo">
-			
-			
-			
+			<p:panel id="pnlTorneo">
+				<p:dataTable id="dtTorneos" value="#{vtUsuarioView.losUsuarios}"
+					var="usuarios" paginator="true" rows="10"
+					paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+					rowsPerPageTemplate="5,10,15" rowKey="#{usuarios.usuaCodigo}"
+					selectionMode="single"
+					selection="#{vtUsuarioView.usuarioSeleccionado}"
+					emptyMessage="Parece que no hay Usuarios, por que no creas uno?"
+					rendered="true" paginatorPosition="bottom">
+				
+				</p:dataTable>			
 			</p:panel>
-			
-			<p:panel id="pnlArbitros">
-			
-			
-			
-			</p:panel>
-			
-			
-			<p:panel id="	">
-			
-			
-			
-			</p:panel>
-			
-			<p:commandButton styleClass="btn btn-danger btn-block" value="Regresar"  action="#{crearTorneoView.regresar}"/>
+
+			<p:commandButton styleClass="btn btn-danger btn-block" value="Regresar"  action="#{actualizarTorneoView.regresar}"/>
 		</h:form>
 	</div>
 

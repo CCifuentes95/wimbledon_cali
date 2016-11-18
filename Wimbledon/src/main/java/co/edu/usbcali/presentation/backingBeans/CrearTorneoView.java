@@ -13,7 +13,8 @@ import co.edu.usbcali.presentation.businessDelegate.IBusinessDelegatorView;
 @ManagedBean
 @ViewScoped
 public class CrearTorneoView {
-    
+	
+	@SuppressWarnings("unused")
     private static final Logger log = LoggerFactory.getLogger(CrearTorneoView.class);
     
     @ManagedProperty(value = "#{BusinessDelegatorView}")

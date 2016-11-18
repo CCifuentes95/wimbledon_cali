@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
 @ViewScoped
 @ManagedBean(name = "mainView")
 public class MainView {
-    
+	 @SuppressWarnings("unused")
 	private final static Logger log=LoggerFactory.getLogger(MainView.class);
 	
 	public String crearTorneo() {        

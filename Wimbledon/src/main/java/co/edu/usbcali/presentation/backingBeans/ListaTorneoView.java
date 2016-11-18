@@ -12,15 +12,15 @@ import co.edu.usbcali.presentation.businessDelegate.IBusinessDelegatorView;
 
 @ManagedBean
 @ViewScoped
-public class ActualizarTorneoView {
+public class ListaTorneoView {
     
     @SuppressWarnings("unused")
-	private static final Logger log = LoggerFactory.getLogger(ActualizarTorneoView.class);
+	private static final Logger log = LoggerFactory.getLogger(ListaTorneoView.class);
     
     @ManagedProperty(value = "#{BusinessDelegatorView}")
     private IBusinessDelegatorView businessDelegatorView;
 
-    public ActualizarTorneoView() {
+    public ListaTorneoView() {
         super();
     }
     
@@ -33,9 +33,7 @@ public class ActualizarTorneoView {
         this.businessDelegatorView = businessDelegatorView;
     }
     
-    public String regresar() {        
-        return "/XHTML/main.xhtml";
-    }
+   
     
     
     
