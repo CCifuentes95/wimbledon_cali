@@ -931,4 +931,8 @@ public class BusinessDelegatorView implements IBusinessDelegatorView {
 	public List<Ronda> findRondasByTorneo(Long idTorneo) throws Exception {
 		return rondaLogic.findRondasByTorneo(idTorneo);
 	}
+
+	public List<Empleado> findArbitros(Long idTipoEmpleado) throws Exception {
+		return empleadoLogic.findArbitros(idTipoEmpleado);
+	}
 }

@@ -8,7 +8,7 @@
             <column name="codigoempleado" />
             <generator class="identity" />
         </id>
-        <many-to-one name="tipoempleado" class="co.edu.usbcali.modelo.Tipoempleado" fetch="select">
+        <many-to-one name="tipoempleado" class="co.edu.usbcali.modelo.Tipoempleado" fetch="select" lazy="false">
             <column name="codigotipoempleado" />
         </many-to-one>
         <property name="nombre" type="java.lang.String">

@@ -53,4 +53,6 @@ public interface IEmpleadoLogic {
     public Long findTotalNumberEmpleado() throws Exception;
 
     public List<EmpleadoDTO> getDataEmpleado() throws Exception;
+    
+    public List<Empleado> findArbitros(Long idTipoEmpleado) throws Exception;
 }

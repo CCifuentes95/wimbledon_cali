@@ -37,10 +37,37 @@
 		<h:form>
 			<p:growl id="msg" />
 			<p:panel id="pnlTorneo">
-				Holi		
+				<p:panelGrid columns="2">
+					
+					<p:outputLabel for="jugadorA"  value="Jugador 1"/>
+					<p:inputText id="jugadorA" value="#{actualizarTorneoView.juagadorA.nombre}" disabled="true"/>
+					
+					<p:outputLabel for="jugadorB"  value="Jugador 2"/>
+					<p:inputText id="jugadorB" value="#{actualizarTorneoView.juagadorB.nombre}" disabled="true"/>
+					
+					<p:outputLabel for="somCanchas"  value="Lista de Canchas"/>
+					<p:selectOneMenu id="somCanchas" binding="#{actualizarTorneoView.somCanchas}" value="#{actualizarTorneoView.partido.cancha.codigocancha}">
+						<f:selectItem itemValue="-1" itemLabel="-Canchas-" />
+						<f:selectItems value="#{actualizarTorneoView.lasCanchas}" />
+					</p:selectOneMenu>
+				
+					<p:outputLabel  for="somArbitros" value="Lista de Arbitros"/>
+					<p:selectOneMenu id="somArbitros" binding="#{actualizarTorneoView.somArbitros}" value="#{actualizarTorneoView.partido.empleado.codigoempleado}">
+						<f:selectItem itemValue="-1" itemLabel="-Arbitros-" />
+						<f:selectItems value="#{actualizarTorneoView.lasArbitrosItems}" />
+					</p:selectOneMenu>
+					
+					<p:outputLabel for="datetime" value="Fecha y Hora" />
+        			<p:calendar id="datetime" value="#{actualizarTorneoView.partido.fecha}" binding="#{actualizarTorneoView.txtCalendar}" pattern="MM/dd/yyyy HH:mm:ss" />
+ 
+				</p:panelGrid>
+				
+				<p:commandButton value="Actualizar" action="#{actualizarTorneoView.actualizar}" update="pnlTorneo, msg"/>
+				<p:commandButton value="Limpiar" action="#{actualizarTorneoView.limpiar}" update="pnlTorneo, msg" />
 			</p:panel>
 
-			<p:commandButton styleClass="btn btn-danger btn-block" value="Regresar"  action="#{actualizarTorneoView.regresar}"/>
+			<p:commandButton styleClass="btn btn-danger btn-block"
+				value="Regresar" action="#{actualizarTorneoView.regresar}" />
 		</h:form>
 	</div>
 

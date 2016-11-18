@@ -433,4 +433,6 @@ public interface IBusinessDelegatorView {
     public List<UsuarioDTO> getDataUsuario() throws Exception;
     
     public List<Ronda> findRondasByTorneo(Long idTorneo) throws Exception;
+    
+    public List<Empleado> findArbitros(Long idTipoEmpleado) throws Exception;
 }

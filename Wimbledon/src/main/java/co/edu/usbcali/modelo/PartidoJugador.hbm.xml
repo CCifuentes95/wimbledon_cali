@@ -8,10 +8,10 @@
             <column name="codigopartido_jugador" />
             <generator class="identity" />
         </id>
-        <many-to-one name="jugador" class="co.edu.usbcali.modelo.Jugador" fetch="select">
+        <many-to-one name="jugador" class="co.edu.usbcali.modelo.Jugador" fetch="select" lazy="false">
             <column name="codigojugadora" not-null="true" />
         </many-to-one>
-        <many-to-one name="partido" class="co.edu.usbcali.modelo.Partido" fetch="select">
+        <many-to-one name="partido" class="co.edu.usbcali.modelo.Partido" fetch="select" lazy="false">
             <column name="codigopartido" />
         </many-to-one>
     </class>

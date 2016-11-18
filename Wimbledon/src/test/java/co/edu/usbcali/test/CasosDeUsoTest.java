@@ -112,7 +112,7 @@ public class CasosDeUsoTest {
 		}
 		
 	}
-	@Test
+	//@Test
 	public void testE() {
 		List<Ronda> rondas = null;
 		
@@ -145,6 +145,24 @@ public class CasosDeUsoTest {
 			log.error(e.getMessage());
 		}
 		
+	}
+	@Test
+	public void testG() {
+		List<Empleado> empleados = null;
+		
+		try {
+			
+			empleados = empleadoLogic.findArbitros(3L);
+			
+			for (Empleado empleado : empleados) {
+				log.info(""+empleado.getNombre());
+			}
+			
+			
+			
+		} catch (Exception e) {
+			log.error(e.getMessage());
+		}	
 	}
 
 }

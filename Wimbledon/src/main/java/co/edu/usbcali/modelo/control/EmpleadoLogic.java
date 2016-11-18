@@ -494,4 +494,26 @@ public class EmpleadoLogic implements IEmpleadoLogic {
 
         return list;
     }
+    
+    @Transactional(readOnly = true)
+    public List<Empleado> findArbitros
+    	(Long idTipoEmpleado) throws Exception {
+    	
+    	log.info("Ingreso al metodo findArbitros");
+    	
+    	List<Empleado> empleados = new ArrayList<Empleado>();
+    	
+    	try {
+			Object[] variables = {"tipoempleado.codigotipoempleado", true, idTipoEmpleado, "="};
+			
+			empleados = findByCriteria(variables, null, null);
+
+		} catch (Exception e) {
+			log.info(e.getMessage(), e);
+			throw new Exception("No se encontro Arbitros");
+		}
+
+    	return (empleados != null && !empleados.isEmpty()
+    			? empleados : empleados);
+    }
 }
