@@ -22,4 +22,9 @@ public class MainView {
 
         return "/XHTML/listaTorneos.xhtml";
     }
+    
+    public String asignarPremios() {        
+
+        return "/XHTML/asignarPremio.xhtml";
+    }
 }

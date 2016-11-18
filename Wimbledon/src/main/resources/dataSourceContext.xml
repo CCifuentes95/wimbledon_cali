@@ -16,7 +16,7 @@
 		<property name="driverClassName" value="org.postgresql.Driver" />
 		<property name="url" value="jdbc:postgresql://localhost:5432/wimbledon" />
 		<property name="username" value="postgres" />
-		<property name="password" value="1125" />
+		<property name="password" value="usbcali" />
 		
 	</bean>
 
