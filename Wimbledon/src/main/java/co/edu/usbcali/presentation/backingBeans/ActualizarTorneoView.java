@@ -8,6 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import co.edu.usbcali.presentation.businessDelegate.IBusinessDelegatorView;
+import co.edu.usbcali.utilities.FacesUtils;
 
 
 @ManagedBean
@@ -33,7 +34,8 @@ public class ActualizarTorneoView {
         this.businessDelegatorView = businessDelegatorView;
     }
     
-    public String regresar() {        
+    public String regresar() {
+    	FacesUtils.putinSession("Torneo", null);
         return "/XHTML/main.xhtml";
     }
     

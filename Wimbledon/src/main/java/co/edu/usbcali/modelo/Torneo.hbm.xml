@@ -8,10 +8,10 @@
             <column name="codigotorneo" />
             <generator class="identity" />
         </id>
-        <many-to-one name="empleado" class="co.edu.usbcali.modelo.Empleado" fetch="select">
+        <many-to-one name="empleado" class="co.edu.usbcali.modelo.Empleado" fetch="select" lazy="false">
             <column name="codigoempleado" not-null="true" />
         </many-to-one>
-        <many-to-one name="tipotorneo" class="co.edu.usbcali.modelo.Tipotorneo" fetch="select">
+        <many-to-one name="tipotorneo" class="co.edu.usbcali.modelo.Tipotorneo" fetch="select" lazy="false">
             <column name="codigotipotorneo" not-null="true" />
         </many-to-one>
         <property name="fechainicio" type="java.util.Date">

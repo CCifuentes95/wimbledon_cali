@@ -23,7 +23,7 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">Wimbledon USB CAlI</a>
+				<a class="navbar-brand" href="#">Wimbledon USB CALI</a>
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
@@ -36,20 +36,52 @@
 	<div class="container">
 		<h:form>
 			<p:growl id="msg" />
-			<p:panel id="pnlTorneo">
-				<p:dataTable id="dtTorneos" value="#{vtUsuarioView.losUsuarios}"
-					var="usuarios" paginator="true" rows="10"
+			<p:panel id="pnlTorneo" header="Lista de Torneos">
+				<p:dataTable id="dtTorneos" value="#{listaTorneoView.losTorneos}"
+					var="torneos" paginator="true" rows="10"
 					paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
-					rowsPerPageTemplate="5,10,15" rowKey="#{usuarios.usuaCodigo}"
-					selectionMode="single"
-					selection="#{vtUsuarioView.usuarioSeleccionado}"
-					emptyMessage="Parece que no hay Usuarios, por que no creas uno?"
+					rowsPerPageTemplate="5,10,15" rowKey="#{torneos.codigotorneo}"					
+					emptyMessage="Parece que no hay Torneos"
 					rendered="true" paginatorPosition="bottom">
+					
+					<p:column headerText="Responsable"
+						filterBy="#{torneos.empleado.nombre}" sortBy="#{torneos.empleado.nombre}"
+						filterMatchMode="contains">
+						<h:outputText value="#{torneos.empleado.nombre}"/>
+					</p:column>
+					
+					<p:column headerText="Tipo de Torneo"
+						filterBy="#{torneos.tipotorneo.descripcion}" sortBy="#{torneos.tipotorneo.descripcion}"
+						filterMatchMode="contains">
+						<h:outputText value="#{torneos.tipotorneo.descripcion}"/>
+					</p:column>
+					
+					<p:column headerText="Fecha Inicio"
+						filterBy="#{torneos.fechainicio}" sortBy="#{torneos.fechainicio}"
+						filterMatchMode="contains">
+						<h:outputText value="#{torneos.fechainicio}">
+							<f:convertDateTime dateStyle="full" type="date" />
+						</h:outputText>
+					</p:column>
+					
+					<p:column headerText="Fecha Fin"
+						filterBy="#{torneos.fechafin}" sortBy="#{torneos.fechafin}"
+						filterMatchMode="contains">
+						<h:outputText value="#{torneos.fechafin}">
+							<f:convertDateTime dateStyle="full" type="date" />
+						</h:outputText>
+					</p:column>
+					
+					<p:column style="width:10%;text-align: center">
+			             <p:commandButton action="#{listaTorneoView.openSelected}" icon="ui-icon-search" title="View" >
+			             	<f:setPropertyActionListener value="#{torneos}" target="#{listaTorneoView.torneoSeleccionado}" />
+			             </p:commandButton>  
+			        </p:column>
 				
 				</p:dataTable>			
 			</p:panel>
 
-			<p:commandButton styleClass="btn btn-danger btn-block" value="Regresar"  action="#{actualizarTorneoView.regresar}"/>
+			<p:commandButton styleClass="btn btn-danger btn-block" value="Regresar"  action="#{listaTorneoView.regresar}"/>
 		</h:form>
 	</div>
 

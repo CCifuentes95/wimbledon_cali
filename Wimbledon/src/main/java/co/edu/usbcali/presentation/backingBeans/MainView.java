@@ -20,6 +20,6 @@ public class MainView {
 	
     public String actualizarTorneo() {        
 
-        return "/XHTML/actualizarTorneo.xhtml";
+        return "/XHTML/listaTorneos.xhtml";
     }
 }
