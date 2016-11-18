@@ -1,30 +1,25 @@
 package co.edu.usbcali.presentation.backingBeans;
 
-import co.edu.usbcali.utilities.*;
-
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.AuthenticationException;
-import org.springframework.security.core.context.SecurityContext;
-import org.springframework.security.core.context.SecurityContextHolder;
-
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 @ViewScoped
 @ManagedBean(name = "mainView")
 public class MainView {
     
+	private final static Logger log=LoggerFactory.getLogger(MainView.class);
+	
 	public String crearTorneo() {        
-
+		log.info("Clickeo Crear Torneo");
         return "/XHTML/crearTorneo.xhtml";
     }
 	
     public String actualizarTorneo() {        
-
+    	log.info("Clickeo Actualizar Torneo");
         return "/XHTML/main.xhtml";
     }
 }

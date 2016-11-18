@@ -36,19 +36,9 @@
 	<div class="container">
 		<h:form>
 			<p:growl id="msg" />
-			<p:menu toggleable="true">
-				<p:submenu label="Torneo">
-					<p:menuitem value="Crear Torneo"  icon="ui-icon-disk" />
-					<p:menuitem value="Actualizar Torneo"  icon="ui-icon-arrowrefresh-1-w" />
-				</p:submenu>
-				<p:submenu label="Jugadores Y Equipos">
-					<p:menuitem value="Gestionar Jugadores" />
-					<p:menuitem value="Gestionar Jugadores" />
-				</p:submenu>
-				<p:submenu label="Reportes">
-					<p:menuitem value="Generar Reporte" icon="ui-icon-home" />
-				</p:submenu>
-			</p:menu>
+			
+
+			<p:commandButton styleClass="btn btn-lg btn-primary btn-block" value="Regresar"  action="#{loginView.login}" update="msgGrowl"/>
 		</h:form>
 	</div>
 
