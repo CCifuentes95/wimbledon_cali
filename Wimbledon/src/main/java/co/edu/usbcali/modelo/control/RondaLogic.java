@@ -453,4 +453,28 @@ public class RondaLogic implements IRondaLogic {
 
         return list;
     }
+    
+
+    @Transactional(readOnly = true)
+    public List<Ronda> findRondasByTorneo
+    	(Long idTorneo) throws Exception {
+    	
+    	log.info("Ingreso al metodo findRondaByTorneo");
+    	
+    	List<Ronda> rondas = new ArrayList<Ronda>();
+    	
+    	try {
+			Object[] variables = {"torneo.codigotorneo", true, idTorneo, "="};
+			
+			rondas = findByCriteria(variables, null, null);
+
+		} catch (Exception e) {
+			log.info(e.getMessage(), e);
+			throw new Exception("No se encontro Rondas para ese Torneo");
+		}
+
+    	return (rondas != null && !rondas.isEmpty()
+    			? rondas : rondas);
+    }
+    
 }

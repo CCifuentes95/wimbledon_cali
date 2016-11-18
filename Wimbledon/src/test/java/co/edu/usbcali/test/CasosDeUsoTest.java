@@ -1,6 +1,7 @@
 package co.edu.usbcali.test;
 
 import java.util.Date;
+import java.util.List;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -94,7 +95,7 @@ public class CasosDeUsoTest {
 		}		
 	}
 	
-	@Test
+	//@Test
 	public void testD() {
 		Ronda ronda = null;
 		try {
@@ -103,6 +104,40 @@ public class CasosDeUsoTest {
 			log.info("Precio Ronda Anterior: "+ronda.getPrecio());
 			ronda.setPrecio(950000D);
 			log.info("Precio Ronda Anterior: "+ronda.getPrecio());
+			
+			rondaLogic.updateRonda(ronda);
+			
+		} catch (Exception e) {
+			log.error(e.getMessage());
+		}
+		
+	}
+	@Test
+	public void testE() {
+		List<Ronda> rondas = null;
+		
+		try {
+			rondas = rondaLogic.findRondasByTorneo(1L);
+			
+			for (Ronda ronda : rondas) {
+				log.info("id: "+ronda.getCodigoronda());
+			}
+			
+		} catch (Exception e) {
+			log.error(e.getMessage());
+		}
+		
+	}
+	//@Test
+	public void testF() {
+		Ronda ronda = null;
+		try {
+			ronda = rondaLogic.getRonda(2L);
+			
+			ronda.getPartidos();
+			for (Partido partido : ronda.getPartidos()) {
+				log.info(""+partido.getCodigopartido());
+			}
 			
 			rondaLogic.updateRonda(ronda);
 			

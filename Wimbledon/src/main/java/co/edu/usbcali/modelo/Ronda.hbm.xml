@@ -20,7 +20,7 @@
         <property name="puntos" type="java.lang.Integer">
             <column name="puntos" />
         </property>
-        <set name="partidos" table="partido" inverse="true" lazy="true" fetch="select">
+        <set name="partidos" table="partido" inverse="true" lazy="false" fetch="select">
             <key>
                 <column name="codigoronda" />
             </key>

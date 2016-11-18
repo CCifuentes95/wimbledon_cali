@@ -53,4 +53,6 @@ public interface IRondaLogic {
     public Long findTotalNumberRonda() throws Exception;
 
     public List<RondaDTO> getDataRonda() throws Exception;
+    
+    public List<Ronda> findRondasByTorneo(Long idTorneo) throws Exception;
 }

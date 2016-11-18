@@ -431,4 +431,6 @@ public interface IBusinessDelegatorView {
     public Long findTotalNumberUsuario() throws Exception;
 
     public List<UsuarioDTO> getDataUsuario() throws Exception;
+    
+    public List<Ronda> findRondasByTorneo(Long idTorneo) throws Exception;
 }

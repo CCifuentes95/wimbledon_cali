@@ -927,4 +927,8 @@ public class BusinessDelegatorView implements IBusinessDelegatorView {
     public List<UsuarioDTO> getDataUsuario() throws Exception {
         return usuarioLogic.getDataUsuario();
     }
+
+	public List<Ronda> findRondasByTorneo(Long idTorneo) throws Exception {
+		return rondaLogic.findRondasByTorneo(idTorneo);
+	}
 }
