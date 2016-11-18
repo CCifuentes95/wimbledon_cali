@@ -14,12 +14,12 @@ public class MainView {
 	private final static Logger log=LoggerFactory.getLogger(MainView.class);
 	
 	public String crearTorneo() {        
-		log.info("Clickeo Crear Torneo");
+
         return "/XHTML/crearTorneo.xhtml";
     }
 	
     public String actualizarTorneo() {        
-    	log.info("Clickeo Actualizar Torneo");
-        return "/XHTML/main.xhtml";
+
+        return "/XHTML/actualizarTorneo.xhtml";
     }
 }
