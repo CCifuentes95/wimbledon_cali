@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 14/11/2016 04:39:29 PM by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+    <class name="co.edu.usbcali.modelo.PartidoUsuario" table="partido_usuario" schema="public" optimistic-lock="version">
+        <id name="codigopartidoUsuario" type="java.lang.Long">
+            <column name="codigopartido_usuario" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="partido" class="co.edu.usbcali.modelo.Partido" fetch="select">
+            <column name="codigopartido" />
+        </many-to-one>
+        <many-to-one name="usuario" class="co.edu.usbcali.modelo.Usuario" fetch="select">
+            <column name="codigousuario" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

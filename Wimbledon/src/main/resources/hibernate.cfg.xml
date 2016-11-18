@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.bytecode.use_reflection_optimizer">false</property>
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>        
+        <mapping resource="co/edu/usbcali/modelo/Partido.hbm.xml" />
+        <mapping resource="co/edu/usbcali/modelo/Cancha.hbm.xml" />
+        <mapping resource="co/edu/usbcali/modelo/Empleado.hbm.xml" />
+        <mapping resource="co/edu/usbcali/modelo/Equipo.hbm.xml" />
+        <mapping resource="co/edu/usbcali/modelo/PartidoResultado.hbm.xml" />
+        <mapping resource="co/edu/usbcali/modelo/Ronda.hbm.xml" />
+        <mapping resource="co/edu/usbcali/modelo/Torneo.hbm.xml" />
+        <mapping resource="co/edu/usbcali/modelo/PartidoJugador.hbm.xml" />
+        <mapping resource="co/edu/usbcali/modelo/Tipotorneo.hbm.xml" />
+        <mapping resource="co/edu/usbcali/modelo/Usuario.hbm.xml" />
+        <mapping resource="co/edu/usbcali/modelo/Resultado.hbm.xml" />
+        <mapping resource="co/edu/usbcali/modelo/Jugador.hbm.xml" />
+        <mapping resource="co/edu/usbcali/modelo/Tipoempleado.hbm.xml" />
+        <mapping resource="co/edu/usbcali/modelo/PartidoUsuario.hbm.xml" />
+        <mapping resource="co/edu/usbcali/modelo/Pais.hbm.xml" />
+    </session-factory>
+</hibernate-configuration>

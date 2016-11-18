@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 14/11/2016 04:39:29 PM by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+    <class name="co.edu.usbcali.modelo.Usuario" table="usuario" schema="public" optimistic-lock="version">
+        <id name="codigousuario" type="java.lang.Long">
+            <column name="codigousuario" />
+            <generator class="identity" />
+        </id>
+        <property name="nombre" type="java.lang.String">
+            <column name="nombre" not-null="true" />
+        </property>
+        <property name="apellido" type="java.lang.String">
+            <column name="apellido" not-null="true" />
+        </property>
+        <property name="email" type="java.lang.String">
+            <column name="email" not-null="true" />
+        </property>
+        <property name="password" type="java.lang.String">
+            <column name="password" not-null="true" />
+        </property>
+        <set name="partidoUsuarios" table="partido_usuario" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="codigousuario" />
+            </key>
+            <one-to-many class="co.edu.usbcali.modelo.PartidoUsuario" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 14/11/2016 04:39:29 PM by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+    <class name="co.edu.usbcali.modelo.Jugador" table="jugador" schema="public" optimistic-lock="version">
+        <id name="codigojugador" type="java.lang.Long">
+            <column name="codigojugador" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="pais" class="co.edu.usbcali.modelo.Pais" fetch="select">
+            <column name="codigopais" />
+        </many-to-one>
+        <property name="nombre" type="java.lang.String">
+            <column name="nombre" not-null="true" />
+        </property>
+        <property name="ranking" type="java.lang.Integer">
+            <column name="ranking" not-null="true" />
+        </property>
+        <property name="activo" type="java.lang.String">
+            <column name="activo" not-null="true" />
+        </property>
+        <set name="partidoJugadors" table="partido_jugador" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="codigojugadora" not-null="true" />
+            </key>
+            <one-to-many class="co.edu.usbcali.modelo.PartidoJugador" />
+        </set>
+        <set name="equipos" table="equipo" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="codigojugadora" not-null="true" />
+            </key>
+            <one-to-many class="co.edu.usbcali.modelo.Equipo" />
+        </set>
+    </class>
+</hibernate-mapping>

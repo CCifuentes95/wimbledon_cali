@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 14/11/2016 04:39:29 PM by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+    <class name="co.edu.usbcali.modelo.Resultado" table="resultado" schema="public" optimistic-lock="version">
+        <id name="codigoresultado" type="java.lang.Long">
+            <column name="codigoresultado" />
+            <generator class="identity" />
+        </id>
+        <property name="resuadoa" type="java.lang.Integer">
+            <column name="resuadoa" not-null="true" />
+        </property>
+        <property name="resutadob" type="java.lang.Integer">
+            <column name="resutadob" not-null="true" />
+        </property>
+        <set name="partidoResultados" table="partido_resultado" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="codigoresultado" />
+            </key>
+            <one-to-many class="co.edu.usbcali.modelo.PartidoResultado" />
+        </set>
+    </class>
+</hibernate-mapping>

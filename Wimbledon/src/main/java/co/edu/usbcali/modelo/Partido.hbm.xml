@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 14/11/2016 04:39:29 PM by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+    <class name="co.edu.usbcali.modelo.Partido" table="partido" schema="public" optimistic-lock="version">
+        <id name="codigopartido" type="java.lang.Long">
+            <column name="codigopartido" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="cancha" class="co.edu.usbcali.modelo.Cancha" fetch="select" lazy="false">
+            <column name="codigocancha" />
+        </many-to-one>
+        <many-to-one name="empleado" class="co.edu.usbcali.modelo.Empleado" fetch="select" lazy="false">
+            <column name="codigoempleado" />
+        </many-to-one>
+        <many-to-one name="ronda" class="co.edu.usbcali.modelo.Ronda" fetch="select" lazy="false">
+            <column name="codigoronda" />
+        </many-to-one>
+        <property name="ganador" type="java.lang.String">
+            <column name="ganador" not-null="true" />
+        </property>
+        <property name="fecha" type="java.util.Date">
+            <column name="fecha" length="29" not-null="true" />
+        </property>
+        <set name="partidoUsuarios" table="partido_usuario" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="codigopartido" />
+            </key>
+            <one-to-many class="co.edu.usbcali.modelo.PartidoUsuario" />
+        </set>
+        <set name="partidoResultados" table="partido_resultado" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="codigopartido" />
+            </key>
+            <one-to-many class="co.edu.usbcali.modelo.PartidoResultado" />
+        </set>
+        <set name="partidoJugadors" table="partido_jugador" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="codigopartido" />
+            </key>
+            <one-to-many class="co.edu.usbcali.modelo.PartidoJugador" />
+        </set>
+    </class>
+</hibernate-mapping>

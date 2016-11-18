@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 14/11/2016 04:39:29 PM by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+    <class name="co.edu.usbcali.modelo.Cancha" table="cancha" schema="public" optimistic-lock="version">
+        <id name="codigocancha" type="java.lang.Long">
+            <column name="codigocancha" />
+            <generator class="identity" />
+        </id>
+        <property name="diametro" type="java.lang.String">
+            <column name="diametro" not-null="true" />
+        </property>
+        <property name="direccion" type="java.lang.String">
+            <column name="direccion" not-null="true" />
+        </property>
+        <set name="partidos" table="partido" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="codigocancha" />
+            </key>
+            <one-to-many class="co.edu.usbcali.modelo.Partido" />
+        </set>
+    </class>
+</hibernate-mapping>

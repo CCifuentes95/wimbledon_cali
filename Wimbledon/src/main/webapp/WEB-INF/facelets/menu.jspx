@@ -1,0 +1,184 @@
+<jsp:root jsfc="f:view" xmlns:jsp="http://java.sun.com/JSP/Page"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:c="http://java.sun.com/jstl/core"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+   
+   <html>
+		<body>
+			<f:view>
+				<ui:composition>
+					<!-- Beging Menu -->
+				
+							<h:form>
+							
+								<p:megaMenu style="width:989px">  
+									<p:submenu label="Master" icon="ui-icon-pencil">  
+							            <p:column>
+							            
+							            	 								            	 <p:submenu label="Cancha">  
+								                    <p:menuitem value="Master Cancha" url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/XHTML/cancha.xhtml" />  
+								               	 </p:submenu>
+											 								            	 <p:submenu label="Empleado">  
+								                    <p:menuitem value="Master Empleado" url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/XHTML/empleado.xhtml" />  
+								               	 </p:submenu>
+											 								            	 <p:submenu label="Equipo">  
+								                    <p:menuitem value="Master Equipo" url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/XHTML/equipo.xhtml" />  
+								               	 </p:submenu>
+											 								            	 <p:submenu label="Jugador">  
+								                    <p:menuitem value="Master Jugador" url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/XHTML/jugador.xhtml" />  
+								               	 </p:submenu>
+											 								            	 <p:submenu label="Pais">  
+								                    <p:menuitem value="Master Pais" url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/XHTML/pais.xhtml" />  
+								               	 </p:submenu>
+											 								            	 <p:submenu label="Partido">  
+								                    <p:menuitem value="Master Partido" url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/XHTML/partido.xhtml" />  
+								               	 </p:submenu>
+											 								            	 <p:submenu label="PartidoJugador">  
+								                    <p:menuitem value="Master PartidoJugador" url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/XHTML/partidoJugador.xhtml" />  
+								               	 </p:submenu>
+											 								            	 <p:submenu label="PartidoResultado">  
+								                    <p:menuitem value="Master PartidoResultado" url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/XHTML/partidoResultado.xhtml" />  
+								               	 </p:submenu>
+											 								            	 <p:submenu label="PartidoUsuario">  
+								                    <p:menuitem value="Master PartidoUsuario" url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/XHTML/partidoUsuario.xhtml" />  
+								               	 </p:submenu>
+											 								            	 <p:submenu label="Resultado">  
+								                    <p:menuitem value="Master Resultado" url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/XHTML/resultado.xhtml" />  
+								               	 </p:submenu>
+											 								            	 <p:submenu label="Ronda">  
+								                    <p:menuitem value="Master Ronda" url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/XHTML/ronda.xhtml" />  
+								               	 </p:submenu>
+											 								            	 <p:submenu label="Tipoempleado">  
+								                    <p:menuitem value="Master Tipoempleado" url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/XHTML/tipoempleado.xhtml" />  
+								               	 </p:submenu>
+											 								            	 <p:submenu label="Tipotorneo">  
+								                    <p:menuitem value="Master Tipotorneo" url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/XHTML/tipotorneo.xhtml" />  
+								               	 </p:submenu>
+											 								            	 <p:submenu label="Torneo">  
+								                    <p:menuitem value="Master Torneo" url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/XHTML/torneo.xhtml" />  
+								               	 </p:submenu>
+											 								            	 <p:submenu label="Usuario">  
+								                    <p:menuitem value="Master Usuario" url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/XHTML/usuario.xhtml" />  
+								               	 </p:submenu>
+											 							            </p:column>
+							        </p:submenu>  
+															
+															
+							  
+							        <p:submenu label="Data Table" icon="ui-icon-document">
+							           <p:column>  
+							                								            	 <p:submenu label="Cancha">  
+								                    <p:menuitem value="Cancha" url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/XHTML/canchaListDataTable.xhtml" />  
+								               	 </p:submenu>
+											 								            	 <p:submenu label="Empleado">  
+								                    <p:menuitem value="Empleado" url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/XHTML/empleadoListDataTable.xhtml" />  
+								               	 </p:submenu>
+											 								            	 <p:submenu label="Equipo">  
+								                    <p:menuitem value="Equipo" url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/XHTML/equipoListDataTable.xhtml" />  
+								               	 </p:submenu>
+											 								            	 <p:submenu label="Jugador">  
+								                    <p:menuitem value="Jugador" url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/XHTML/jugadorListDataTable.xhtml" />  
+								               	 </p:submenu>
+											 								            	 <p:submenu label="Pais">  
+								                    <p:menuitem value="Pais" url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/XHTML/paisListDataTable.xhtml" />  
+								               	 </p:submenu>
+											 								            	 <p:submenu label="Partido">  
+								                    <p:menuitem value="Partido" url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/XHTML/partidoListDataTable.xhtml" />  
+								               	 </p:submenu>
+											 								            	 <p:submenu label="PartidoJugador">  
+								                    <p:menuitem value="PartidoJugador" url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/XHTML/partidoJugadorListDataTable.xhtml" />  
+								               	 </p:submenu>
+											 								            	 <p:submenu label="PartidoResultado">  
+								                    <p:menuitem value="PartidoResultado" url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/XHTML/partidoResultadoListDataTable.xhtml" />  
+								               	 </p:submenu>
+											 								            	 <p:submenu label="PartidoUsuario">  
+								                    <p:menuitem value="PartidoUsuario" url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/XHTML/partidoUsuarioListDataTable.xhtml" />  
+								               	 </p:submenu>
+											 								            	 <p:submenu label="Resultado">  
+								                    <p:menuitem value="Resultado" url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/XHTML/resultadoListDataTable.xhtml" />  
+								               	 </p:submenu>
+											 								            	 <p:submenu label="Ronda">  
+								                    <p:menuitem value="Ronda" url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/XHTML/rondaListDataTable.xhtml" />  
+								               	 </p:submenu>
+											 								            	 <p:submenu label="Tipoempleado">  
+								                    <p:menuitem value="Tipoempleado" url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/XHTML/tipoempleadoListDataTable.xhtml" />  
+								               	 </p:submenu>
+											 								            	 <p:submenu label="Tipotorneo">  
+								                    <p:menuitem value="Tipotorneo" url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/XHTML/tipotorneoListDataTable.xhtml" />  
+								               	 </p:submenu>
+											 								            	 <p:submenu label="Torneo">  
+								                    <p:menuitem value="Torneo" url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/XHTML/torneoListDataTable.xhtml" />  
+								               	 </p:submenu>
+											 								            	 <p:submenu label="Usuario">  
+								                    <p:menuitem value="Usuario" url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/XHTML/usuarioListDataTable.xhtml" />  
+								               	 </p:submenu>
+											 							            </p:column>
+							        </p:submenu>  
+							  
+							        
+							  
+							  
+							        <p:submenu label="Edit Data Table" icon="ui-icon-contact">  
+							            <p:column>  
+							                								            	 <p:submenu label="Cancha">  
+								                    <p:menuitem value="Cancha" url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/XHTML/canchaListDataTableEditable.xhtml" />  
+								               	 </p:submenu>
+											 								            	 <p:submenu label="Empleado">  
+								                    <p:menuitem value="Empleado" url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/XHTML/empleadoListDataTableEditable.xhtml" />  
+								               	 </p:submenu>
+											 								            	 <p:submenu label="Equipo">  
+								                    <p:menuitem value="Equipo" url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/XHTML/equipoListDataTableEditable.xhtml" />  
+								               	 </p:submenu>
+											 								            	 <p:submenu label="Jugador">  
+								                    <p:menuitem value="Jugador" url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/XHTML/jugadorListDataTableEditable.xhtml" />  
+								               	 </p:submenu>
+											 								            	 <p:submenu label="Pais">  
+								                    <p:menuitem value="Pais" url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/XHTML/paisListDataTableEditable.xhtml" />  
+								               	 </p:submenu>
+											 								            	 <p:submenu label="Partido">  
+								                    <p:menuitem value="Partido" url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/XHTML/partidoListDataTableEditable.xhtml" />  
+								               	 </p:submenu>
+											 								            	 <p:submenu label="PartidoJugador">  
+								                    <p:menuitem value="PartidoJugador" url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/XHTML/partidoJugadorListDataTableEditable.xhtml" />  
+								               	 </p:submenu>
+											 								            	 <p:submenu label="PartidoResultado">  
+								                    <p:menuitem value="PartidoResultado" url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/XHTML/partidoResultadoListDataTableEditable.xhtml" />  
+								               	 </p:submenu>
+											 								            	 <p:submenu label="PartidoUsuario">  
+								                    <p:menuitem value="PartidoUsuario" url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/XHTML/partidoUsuarioListDataTableEditable.xhtml" />  
+								               	 </p:submenu>
+											 								            	 <p:submenu label="Resultado">  
+								                    <p:menuitem value="Resultado" url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/XHTML/resultadoListDataTableEditable.xhtml" />  
+								               	 </p:submenu>
+											 								            	 <p:submenu label="Ronda">  
+								                    <p:menuitem value="Ronda" url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/XHTML/rondaListDataTableEditable.xhtml" />  
+								               	 </p:submenu>
+											 								            	 <p:submenu label="Tipoempleado">  
+								                    <p:menuitem value="Tipoempleado" url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/XHTML/tipoempleadoListDataTableEditable.xhtml" />  
+								               	 </p:submenu>
+											 								            	 <p:submenu label="Tipotorneo">  
+								                    <p:menuitem value="Tipotorneo" url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/XHTML/tipotorneoListDataTableEditable.xhtml" />  
+								               	 </p:submenu>
+											 								            	 <p:submenu label="Torneo">  
+								                    <p:menuitem value="Torneo" url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/XHTML/torneoListDataTableEditable.xhtml" />  
+								               	 </p:submenu>
+											 								            	 <p:submenu label="Usuario">  
+								                    <p:menuitem value="Usuario" url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/XHTML/usuarioListDataTableEditable.xhtml" />  
+								               	 </p:submenu>
+											 							            </p:column>  
+							        </p:submenu>  
+						  
+						        	<p:menuitem value="Quit" url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/index.jsp" icon="ui-icon-close" />  
+						    
+						    </p:megaMenu>  
+						</h:form>
+					
+					<!-- end menu -->
+				</ui:composition>
+			</f:view>
+		</body>
+	</html>
+</jsp:root>

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 14/11/2016 04:39:29 PM by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+    <class name="co.edu.usbcali.modelo.Ronda" table="ronda" schema="public" optimistic-lock="version">
+        <id name="codigoronda" type="java.lang.Long">
+            <column name="codigoronda" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="torneo" class="co.edu.usbcali.modelo.Torneo" fetch="select">
+            <column name="codigotorneo" />
+        </many-to-one>
+        <property name="nombre" type="java.lang.String">
+            <column name="nombre" not-null="true" />
+        </property>
+        <property name="precio" type="java.lang.Double">
+            <column name="precio" precision="17" scale="17" not-null="true" />
+        </property>
+        <property name="puntos" type="java.lang.Integer">
+            <column name="puntos" />
+        </property>
+        <set name="partidos" table="partido" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="codigoronda" />
+            </key>
+            <one-to-many class="co.edu.usbcali.modelo.Partido" />
+        </set>
+    </class>
+</hibernate-mapping>

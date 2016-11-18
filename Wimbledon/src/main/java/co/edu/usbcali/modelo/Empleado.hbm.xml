@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 14/11/2016 04:39:29 PM by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+    <class name="co.edu.usbcali.modelo.Empleado" table="empleado" schema="public" optimistic-lock="version">
+        <id name="codigoempleado" type="java.lang.Long">
+            <column name="codigoempleado" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="tipoempleado" class="co.edu.usbcali.modelo.Tipoempleado" fetch="select">
+            <column name="codigotipoempleado" />
+        </many-to-one>
+        <property name="nombre" type="java.lang.String">
+            <column name="nombre" not-null="true" />
+        </property>
+        <property name="apellido" type="java.lang.String">
+            <column name="apellido" not-null="true" />
+        </property>
+        <property name="email" type="java.lang.Long">
+            <column name="email" not-null="true" />
+        </property>
+        <property name="password" type="java.lang.Long">
+            <column name="password" not-null="true" />
+        </property>
+        <set name="partidos" table="partido" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="codigoempleado" />
+            </key>
+            <one-to-many class="co.edu.usbcali.modelo.Partido" />
+        </set>
+        <set name="torneos" table="torneo" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="codigoempleado" not-null="true" />
+            </key>
+            <one-to-many class="co.edu.usbcali.modelo.Torneo" />
+        </set>
+    </class>
+</hibernate-mapping>

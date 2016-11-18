@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 14/11/2016 04:39:29 PM by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+    <class name="co.edu.usbcali.modelo.PartidoResultado" table="partido_resultado" schema="public" optimistic-lock="version">
+        <id name="codigopatridoResultado" type="java.lang.Long">
+            <column name="codigopatrido_resultado" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="partido" class="co.edu.usbcali.modelo.Partido" fetch="select">
+            <column name="codigopartido" />
+        </many-to-one>
+        <many-to-one name="resultado" class="co.edu.usbcali.modelo.Resultado" fetch="select">
+            <column name="codigoresultado" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>
