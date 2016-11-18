@@ -10,6 +10,8 @@ import javax.faces.bean.ViewScoped;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import co.edu.usbcali.modelo.Partido;
+import co.edu.usbcali.modelo.Ronda;
 import co.edu.usbcali.modelo.Torneo;
 import co.edu.usbcali.presentation.businessDelegate.IBusinessDelegatorView;
 import co.edu.usbcali.utilities.FacesUtils;
@@ -17,25 +19,28 @@ import co.edu.usbcali.utilities.FacesUtils;
 
 @ManagedBean
 @ViewScoped
-public class ListaTorneoView {
+public class ListaRondasView {
     
-    @SuppressWarnings("unused")
-	private static final Logger log = LoggerFactory.getLogger(ListaTorneoView.class);
+    private static final Logger log = LoggerFactory.getLogger(ListaRondasView.class);
     
-    private List<Torneo> losTorneos;
+    private List<Ronda> lasRondas;
+    
+    private Ronda RondaSeleccionada;
     
     private Torneo torneoSeleccionado;
+    
+    private Partido partidoSeleccionado;
     
     @ManagedProperty(value = "#{BusinessDelegatorView}")
     private IBusinessDelegatorView businessDelegatorView;
 
-    public ListaTorneoView() {
+    public ListaRondasView() {
         super();
     }
     
     @PostConstruct
     public void init(){
-    	
+    	this.torneoSeleccionado = (Torneo) FacesUtils.getfromSession("Torneo");
     }
     
     public IBusinessDelegatorView getBusinessDelegatorView() {
@@ -47,22 +52,30 @@ public class ListaTorneoView {
         this.businessDelegatorView = businessDelegatorView;
     }
 
-	public List<Torneo> getLosTorneos() {
-		
+	
+	public List<Ronda> getLasRondas() {
 		try {
-			if(losTorneos == null){
-				losTorneos = businessDelegatorView.getTorneo();
+			if(lasRondas == null){
+				lasRondas = businessDelegatorView.findRondasByTorneo(torneoSeleccionado.getCodigotorneo());
 			}
 
 		} catch (Exception e) {
 			log.error(e.getMessage());
 		}
-
-		return losTorneos;
+		
+		return lasRondas;
 	}
 
-	public void setLosTorneos(List<Torneo> losTorneos) {
-		this.losTorneos = losTorneos;
+	public void setLasRondas(List<Ronda> lasRondas) {
+		this.lasRondas = lasRondas;
+	}
+
+	public Ronda getRondaSeleccionada() {
+		return RondaSeleccionada;
+	}
+
+	public void setRondaSeleccionada(Ronda rondaSeleccionada) {
+		RondaSeleccionada = rondaSeleccionada;
 	}
 
 	public Torneo getTorneoSeleccionado() {
@@ -71,16 +84,26 @@ public class ListaTorneoView {
 
 	public void setTorneoSeleccionado(Torneo torneoSeleccionado) {
 		this.torneoSeleccionado = torneoSeleccionado;
+	} 
+	
+	public Partido getPartidoSeleccionado() {
+		return partidoSeleccionado;
 	}
-    
+
+	public void setPartidoSeleccionado(Partido partidoSeleccionado) {
+		this.partidoSeleccionado = partidoSeleccionado;
+	}
+
 	public String openSelected(){
-		FacesUtils.putinSession("Torneo", torneoSeleccionado);
+		FacesUtils.putinSession("Partido", partidoSeleccionado);
 		
-		return "/XHTML/listaRondas.xhtml";
+		return "/XHTML/actualizarTorneo.xhtml";
 	}
     
-	public String regresar() {        
-        return "/XHTML/main.xhtml";
+	public String regresar() {
+		FacesUtils.putinSession("Torneo", null);		
+		FacesUtils.putinSession("Partido", null);
+        return "/XHTML/listaTorneos.xhtml";
     }
     
     

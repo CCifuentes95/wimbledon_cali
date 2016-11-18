@@ -1,0 +1,107 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link href="./css/bootstrap.min.css" rel="stylesheet" />
+</h:head>
+
+<h:body>
+
+	<!-- Fixed navbar -->
+	<nav class="navbar navbar-inverse navbar-default" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+					aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">Wimbledon USB CALI</a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#/">Home</a></li>
+				</ul>
+			</div>
+			<!--/.nav-collapse -->
+		</div>
+	</nav>
+	<div class="container">
+		<h:form>
+			<p:growl id="msg" />
+			<p:panel id="pnlRonda" header="Lista de Rondas">
+				<p:dataTable id="dtRondas" value="#{listaRondasView.lasRondas}"
+					var="rondas" paginator="true" rows="10"
+					paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+					rowsPerPageTemplate="5,10,15" rowKey="#{rondas.codigoronda}"
+					emptyMessage="Parece que no hay Rondas" rendered="true"
+					paginatorPosition="bottom">
+
+					<p:column style="width:10%">
+						<p:rowToggler />
+					</p:column>
+
+					<p:column headerText="Nombre" filterBy="#{rondas.nombre}"
+						sortBy="#{rondas.nombre}" filterMatchMode="contains">
+						<h:outputText value="#{rondas.nombre}" />
+					</p:column>
+
+					<p:column headerText="Precio" filterBy="#{rondas.precio}"
+						sortBy="#{rondas.precio}" filterMatchMode="contains">
+						<h:outputText value="#{rondas.precio}" />
+					</p:column>
+
+
+					<p:rowExpansion>
+						<p:dataTable id="dtRondas" value="#{rondas.partidos}"
+							var="partidos" paginator="true" rows="10"
+							paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+							rowsPerPageTemplate="5,10,15" rowKey="#{partidos.codigopartido}"
+							emptyMessage="Parece que no hay Partidos" rendered="true"
+							paginatorPosition="bottom">
+							<p:column headerText="Direccion Cancha"
+								filterBy="#{partidos.cancha.direccion}"
+								sortBy="#{partidos.cancha.direccion}" filterMatchMode="contains">
+								<h:outputText value="#{partidos.cancha.direccion}" />
+							</p:column>
+
+							<p:column headerText="Arbitro"
+								filterBy="#{partidos.empleado.nombre}"
+								sortBy="#{partidos.empleado.nombre}" filterMatchMode="contains">
+								<h:outputText value="#{partidos.empleado.nombre}" />
+							</p:column>
+
+							<p:column headerText="Fecha" filterBy="#{partidos.fecha}"
+								sortBy="#{partidos.fecha}" filterMatchMode="contains">
+								<h:outputText value="#{partidos.fecha}">
+									<f:convertDateTime dateStyle="full" type="both" />
+								</h:outputText>
+							</p:column>
+
+							<p:column style="width:10%;text-align: center">
+								<p:commandButton action="#{listaRondasView.openSelected}"
+									icon="ui-icon-search" title="View">
+									<f:setPropertyActionListener value="#{torneos}"
+										target="#{listaRondasView.partidoSeleccionado}" />
+								</p:commandButton>
+							</p:column>
+						</p:dataTable>
+					</p:rowExpansion>
+
+				</p:dataTable>
+			</p:panel>
+
+			<p:commandButton styleClass="btn btn-danger btn-block"
+				value="Regresar" action="#{listaRondasView.regresar}" />
+		</h:form>
+	</div>
+
+</h:body>
+</html>
